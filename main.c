@@ -12,9 +12,7 @@ printf("+=+=+=+=+\n");
 for(i=0;i<9;i++){
 printf("|%c|",ar[i]);
 if(i==2||i==5||i==8){
-printf("\n+=+=+=+=+\n");
-}
-}
+printf("\n+=+=+=+=+\n");}}
 }
 int check(int posi){
 if(ar[posi]==32){
@@ -30,9 +28,7 @@ cplace=(rand()%10);
 rval=check(cplace);
 if(rval==0){
 ar[cplace]=79;
-break;
-}
-}
+break;}}
 }
 void humanPlacer(){
 	int ideal=0;
@@ -47,15 +43,57 @@ ideal=check(pos-1);
 }
 int matchWinCheck(){
 if((ar[0]==88)&&(ar[1]==(88))&&(ar[2]==(88))){
-	int result=ar[0];
-	if(result==88){
 	printf("You won\n");
-	}
-	/*else{
-	printf("You lose\n");
-	
-	}*/
 	return 1;
+}
+else if((ar[3]==88)&&(ar[4]==(88))&&(ar[5]==(88)))
+{	printf("You won\n");
+	return 1;
+}else if((ar[6]==88)&&(ar[7]==(88))&&(ar[8]==(88)))
+{	printf("You won\n");
+	return 1;
+}else if((ar[0]==88)&&(ar[3]==(88))&&(ar[6]==(88)))
+{	printf("You won\n");
+	return 1;
+}else if((ar[1]==88)&&(ar[4]==(88))&&(ar[7]==(88)))
+{	printf("You won\n");
+	return 1;
+}else if((ar[2]==88)&&(ar[5]==(88))&&(ar[8]==(88)))
+{	printf("You won\n");
+	return 1;
+}else if((ar[0]==88)&&(ar[4]==(88))&&(ar[8]==(88)))
+{	printf("You won\n");
+	return 1;
+}else if((ar[2]==88)&&(ar[4]==(88))&&(ar[6]==(88)))
+{	printf("You won\n");
+	return 1;
+}
+else if((ar[0]==79)&&(ar[1]==(79))&&(ar[2]==(79)))
+{       printf("You lose\n");
+        return 1;
+}
+else if((ar[3]==79)&&(ar[4]==(79))&&(ar[5]==(79)))
+{       printf("You lose\n");
+        return 1;
+}
+else if((ar[6]==79)&&(ar[7]==(79))&&(ar[8]==(79)))
+{       printf("You lose\n");
+        return 1;
+}else if((ar[0]==79)&&(ar[3]==(79))&&(ar[6]==(79)))
+{       printf("You lose\n");
+        return 1;
+}else if((ar[1]==79)&&(ar[4]==(79))&&(ar[7]==(79)))
+{       printf("You lose\n");
+        return 1;
+}else if((ar[2]==79)&&(ar[5]==(79))&&(ar[8]==(79)))
+{       printf("You lose\n");
+        return 1;
+}else if((ar[0]==79)&&(ar[4]==(79))&&(ar[8]==(79)))
+{       printf("You lose\n");
+        return 1;
+}else if((ar[2]==79)&&(ar[4]==(79))&&(ar[6]==(79)))
+{       printf("You lose\n");
+        return 1;
 }
 else{return 0;}
 }
@@ -72,6 +110,5 @@ humanPlacer();
 print();
 randomPlacer();
 print();}
-		
 }
 }
