@@ -97,18 +97,34 @@ else if((ar[6]==79)&&(ar[7]==(79))&&(ar[8]==(79)))
 }
 else{return 0;}
 }
+int draw(){
+	int flag=0;
+	for(int i=0;i<9;i++){
+	if((ar[i]==' ')){
+		flag=0;
+	return flag;
+	break;
+	}
+	else{
+	flag=1;
+	}
+	}
+return flag;
+}
+#define checkk() {finres=matchWinCheck();if(finres==1){break;}}
+#define dc() {drw=draw();if(drw==1){printf("Draw\n");break;}}
 int main(){
-	int finres;
 init();
+int finres,drw;
 print();
 for(;;){
- finres=matchWinCheck();
- if(finres==1){
-	 break;}
- else {
+checkk();
+dc();
 humanPlacer();
 print();
+checkk();
+dc();
 randomPlacer();
 print();}
 }
-}
+
